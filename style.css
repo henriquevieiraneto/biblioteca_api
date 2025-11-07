@@ -1,0 +1,107 @@
+/* style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #e9ecef;
+    color: #333;
+}
+
+h1 {
+    color: #007bff;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #495057;
+    margin-top: 0;
+}
+
+#cadastro-form, #livros-lista, #filtros-container, .container {
+    background: #fff;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], select {
+    width: calc(100% - 24px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Botões */
+button, .botoes-home a {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    font-weight: 500;
+    margin-top: 5px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+}
+button:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-toggle {
+    background-color: #ffc107;
+    color: #333;
+}
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Layouts */
+.hero { text-align: center; padding: 50px; background-color: #e9ecef; border-radius: 10px; }
+.hero h1 { color: #007bff; }
+.botoes-home { margin-top: 30px; }
+.botoes-home a { padding: 15px 30px; margin: 10px; }
+.btn-catalog { background-color: #28a745; color: white; }
+.btn-login { background-color: #ffc107; color: #333; }
+
+/* Lista de Livros */
+.livro-card {
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+.livro-info h3 { margin-top: 0; color: #007bff; }
+.livro-info p { margin: 3px 0; font-size: 0.95em; }
+.livro-status { font-weight: bold; padding: 5px 10px; border-radius: 5px; }
+.disponivel { background-color: #d4edda; color: #155724; }
+.indisponivel { background-color: #f8d7da; color: #721c24; }
+.livro-acoes button { margin-left: 8px; font-size: 0.9em; }
+.erro-msg { color: #dc3545; font-weight: bold; margin-top: 10px; }
+
+/* Filtros */
+#filtros-form { display: flex; gap: 15px; align-items: flex-end; }
+#filtros-form input, #filtros-form select { margin-bottom: 0; width: 200px; }

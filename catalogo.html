@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Livros - Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script type="module" src="auth.js"></script>
+    <script type="module">
+        import { requerAutenticacao } from './auth.js';
+        // Descomente a linha abaixo para forçar o login antes de ver o catálogo
+        // requerAutenticacao();
+    </script>
+
+    <h1>📚 Catálogo de Livros (CRUD)</h1>
+    <p><a href="index.html">← Voltar para a Home</a></p>
+    <button onclick="logout()" class="btn-delete">Sair da Conta</button>
+    <hr>
+    
+    <div id="cadastro-form">
+        <h2>Adicionar Novo Livro</h2>
+        <form id="form-adicionar">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" required>
+            <label for="autor">Autor:</label>
+            <input type="text" id="autor" required>
+            <label for="ano_publicacao">Ano de Publicação:</label>
+            <input type="number" id="ano_publicacao" required>
+            <label for="isbn">ISBN (Opcional):</label>
+            <input type="text" id="isbn">
+
+            <button type="submit" class="btn-primary">Adicionar Livro</button>
+            <p id="form-mensagem" class="erro-msg"></p>
+        </form>
+    </div>
+
+    <div id="livros-lista">
+        <h2>Filtros e Catálogo</h2>
+        
+        <div id="filtros-container">
+            <form id="filtros-form">
+                <div class="filtro-item">
+                    <label for="filtro-autor">Filtrar por Autor:</label>
+                    <input type="text" id="filtro-autor" placeholder="Ex: Orwell">
+                </div>
+                <div class="filtro-item">
+                    <label for="filtro-titulo">Filtrar por Título:</label>
+                    <input type="text" id="filtro-titulo" placeholder="Ex: 1984">
+                </div>
+                <div class="filtro-item">
+                    <label for="filtro-disponibilidade">Disponibilidade:</label>
+                    <select id="filtro-disponibilidade">
+                        <option value="todos">Todos</option>
+                        <option value="true">Disponíveis</option>
+                        <option value="false">Emprestados</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-primary">Aplicar Filtros</button>
+                <button type="button" id="btn-limpar-filtros">Limpar Filtros</button>
+            </form>
+        </div>
+        <hr>
+
+        <div id="lista-container">
+            </div>
+        <p id="carregando">Carregando livros...</p>
+    </div>
+
+    <script type="module" src="script.js"></script> 
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo à Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <h1>Bem-vindo à Biblioteca Central!</h1>
+        <p>Acesse nosso catálogo completo de livros ou faça login para gerenciar o acervo.</p>
+        
+        <div class="botoes-home">
+            <a href="catalogo.html" class="btn-catalog">Ver Catálogo de Livros</a>
+            <a href="login.html" class="btn-login" id="btn-acesso">Fazer Login / Cadastrar</a>
+        </div>
+        
+        <button id="btn-logout" style="display:none; margin-top: 20px;" class="btn-delete">Sair</button>
+    </div>
+
+    <script type="module" src="auth.js"></script>
+    <script type="module">
+        import { estaLogado, logout } from './auth.js';
+        
+        const btnLogin = document.getElementById('btn-acesso');
+        const btnLogout = document.getElementById('btn-logout');
+
+        if (estaLogado()) {
+            btnLogin.style.display = 'none';
+            btnLogout.style.display = 'inline-block';
+            btnLogout.onclick = logout;
+        } else {
+            btnLogin.textContent = 'Fazer Login / Cadastrar';
+        }
+    </script>
+</body>
+</html>
